@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://darssal.github.io/sitemap.xml
