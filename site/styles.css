@@ -69,12 +69,12 @@ h2 { font-size: clamp(32px, 4vw, 60px); line-height: 1.35; letter-spacing: -.035
 .notes { padding-block: 78px 88px; }
 .notes .section-heading { padding-top: 0; padding-bottom: 46px; }
 .note-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.note { padding-right: 34px; }
+.note { padding-right: 34px; display: flex; flex-direction: column; }
 .note + .note { padding-left: 38px; border-left: 1px solid var(--line); }
 .note:last-child { padding-right: 0; }
 .note h3 { font-size: clamp(24px, 2.7vw, 38px); line-height: 1.5; font-weight: 700; letter-spacing: -.035em; }
-.note p { margin-top: 22px; font-size: 21px; line-height: 1.9; }
-.note .text-link { margin-top: 24px; font-size: 20px; }
+.note p { margin-top: 22px; font-size: 21px; line-height: 1.9; flex: 1; text-wrap: pretty; }
+.note .text-link { margin-top: 24px; font-size: 20px; align-self: flex-start; }
 .about { padding-block: 64px; background: var(--wash); }
 .about-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 66px; }
 .about h2 { font-size: clamp(30px, 3.3vw, 46px); }
