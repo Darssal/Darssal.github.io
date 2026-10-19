@@ -10,6 +10,8 @@
 
 ## 网站结构
 
+- [个人版学术页](https://darssal.github.io/anime/)：使用本人指定动漫头像、侧栏导航与论文列表。版式参考 [Shuhong Chen 的学术主页](https://shuhongchen.github.io/)，沿用已核实的职业与学术信息。源码位于 site/anime/。
+
 - [`site/index.html`](site/index.html)：个人介绍、教育背景、论文、获奖与开源项目。
 - [`site/cv.html`](site/cv.html)：可打印的公开简历。
 - [`site/styles.css`](site/styles.css)：响应式布局、排版和交互状态。
