@@ -56,9 +56,12 @@ h3 { font-size: 21px; line-height: 1.5; font-weight: 650; }
 .news-list time { color: var(--muted); font-variant-numeric: tabular-nums; }
 .news-list a { color: var(--body); }
 .news-list a:hover { color: var(--link); }
-.paper { display: grid; grid-template-columns: 32% minmax(0, 1fr); gap: 28px; padding: 30px 0; border-bottom: 1px solid var(--line); align-items: start; scroll-margin-top: 24px; }
+.paper { display: grid; grid-template-columns: minmax(0, 1fr) 32%; gap: 28px; padding: 30px 0; border-bottom: 1px solid var(--line); align-items: start; scroll-margin-top: 24px; }
 .paper:first-of-type { padding-top: 28px; }
-.method { width: 100%; border-radius: 6px; background: var(--surface); }
+.paper-copy { min-width: 0; }
+.paper-figure { margin: 0; min-width: 0; }
+.paper-figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+.paper-figure figcaption { margin-top: 8px; font-size: 13px; line-height: 1.6; }
 .paper h3 { line-height: 1.4; font-size: 20px; margin-top: -3px; }
 .authors { margin-top: 9px; line-height: 1.6; font-size: 16px; }
 .authors strong { color: var(--ink); }
@@ -95,7 +98,7 @@ summary:hover { text-decoration: underline; text-underline-offset: .23em; }
 .entry-status { color: var(--ink); font-weight: 600; }
 .experience-entry > p, .education-entry > p { margin-top: 9px; font-size: 16px; }
 .award-list { list-style: none; padding: 0; }
-.award-list li { display: grid; grid-template-columns: 64px minmax(0, 1fr) 215px; gap: 20px; padding: 17px 0; align-items: start; border-bottom: 1px solid var(--line); font-size: 16px; }
+.award-list li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 20px; padding: 10px 0; align-items: start; font-size: 16px; }
 .award-list time { color: var(--muted); font-variant-numeric: tabular-nums; }
 .award-list strong { color: var(--link); font-weight: 600; }
 .award-context { display: block; color: var(--muted); font-size: 14px; }
@@ -136,7 +139,7 @@ td { color: var(--body); }
   .entry-heading { flex-wrap: wrap; gap: 8px 20px; }
   .entry-date { text-align: left; }
   .entry-date span { display: inline; margin-left: 8px; }
-  .award-list li { grid-template-columns: 60px minmax(0, 1fr) 190px; gap: 16px; }
+  .award-list li { grid-template-columns: 60px minmax(0, 1fr); gap: 16px; }
   .footer { flex-wrap: wrap; gap: 10px; }
 }
 @media (max-width: 760px) {
@@ -162,7 +165,7 @@ td { color: var(--body); }
   .news-list li { grid-template-columns: 72px minmax(0, 1fr); gap: 14px; font-size: 15px; }
   .news-list { gap: 16px; margin-top: 24px; }
   .paper { grid-template-columns: 1fr; gap: 22px; padding-block: 26px; }
-  .method { width: min(100%, 440px); }
+  .paper-figure { width: min(100%, 440px); }
   .paper h3 { font-size: 20px; }
   .paper-copy > p:not(.authors):not(.citation) { font-size: 15px; }
   .entry-heading { display: block; }
@@ -171,7 +174,7 @@ td { color: var(--body); }
   .project > p, .experience-entry > p, .education-entry > p { font-size: 15px; }
   .entry-date { margin-top: 7px; font-size: 14px; }
   .experience-entry h3, .education-entry h3 { font-size: 19px; }
-  .award-list li { grid-template-columns: 48px minmax(0, 1fr); gap: 4px 16px; font-size: 15px; padding-block: 18px; }
+  .award-list li { grid-template-columns: 48px minmax(0, 1fr); gap: 4px 16px; font-size: 15px; padding-block: 9px; }
   .award-list strong { grid-column: 2; }
   .award-context { font-size: 13px; margin-top: 2px; }
   .footer { display: block; padding-block: 24px 32px; }
