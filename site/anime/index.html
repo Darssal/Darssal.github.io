@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="沈瑚双 Hushuang Shen 的个人主页：多模态大模型、Agent 记忆与检索研究，以及开源工程项目。中国石油大学（北京）克拉玛依校区本科在读，2027 年保研去向为 UCAS / ICT（尚未入学）。">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Darssal · 沈瑚双 Hushuang Shen">
+  <meta property="og:description" content="Multimodal LLMs · Agent Memory · Retrieval. Research and open-source projects.">
+  <meta property="og:url" content="https://darssal.github.io/anime/">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="canonical" href="https://darssal.github.io/anime/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Darssal · 沈瑚双 Hushuang Shen</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到主要内容</a>
+  <aside class="sidebar" id="site-sidebar" aria-label="个人资料与导航">
+    <a class="sidebar-avatar" href="#home"><img src="avatar.jpg" width="180" height="180" alt="Darssal的动漫头像" fetchpriority="high"></a>
+    <h1 class="sidebar-name" lang="en">Darssal</h1>
+    <p class="sidebar-caption">沈瑚双 / <span lang="en">Hushuang Shen</span></p>
+    <div class="sidebar-social">
+      <a href="https://github.com/Darssal" aria-label="Darssal 的 GitHub" lang="en">GitHub</a>
+      <a href="../cv.html" lang="en">CV</a>
+      <a href="../">学术版</a>
+    </div>
+    <nav class="sidebar-nav" aria-label="主要导航" lang="en">
+      <a href="#home" data-section="home">About</a>
+      <a href="#news" data-section="news">News</a>
+      <a href="#publications" data-section="publications">Research</a>
+      <a href="#projects" data-section="projects">Projects</a>
+      <a href="#experience" data-section="experience">Experience</a>
+      <a href="#honors" data-section="honors">Honors</a>
+      <a href="#education" data-section="education">Education</a>
+    </nav>
+  </aside>
+
+  <main class="main" id="main" tabindex="-1">
+    <section class="intro" id="home" aria-labelledby="home-title">
+      <h2 id="home-title" lang="en">About</h2>
+      <p>我是沈瑚双，中国石油大学（北京）克拉玛依校区数据科学与大数据技术专业本科生，预计 2027 年毕业。</p>
+      <p>我主要做多模态大模型和 Agent 记忆相关研究。目前的工作包括成像测井裂缝解释、长对话中的持久检索，以及招聘文本标注。</p>
+      <p class="destination"><strong>2027 年保研去向：中国科学院大学 · 计算技术研究所</strong><br>计算机科学与技术 · <span lang="en">UCAS / ICT</span> · <span class="stage">尚未入学</span></p>
+    </section>
+
+    <div class="content">
+      <section class="section news" id="news" aria-labelledby="news-title">
+        <div class="section-heading"><h2 id="news-title" lang="en">News</h2></div>
+        <ol class="news-list">
+          <li><time datetime="2026-09">2026.09</time><p>国家级大学生创新训练项目“基于联合时空注意力机制和多模态大模型的地层信息处理系统——油田数据预测和隐私安全研究”结题，担任项目成员。</p></li>
+          <li><time datetime="2026-06-21">2026.06</time><p><a href="#paper-memory" lang="en">Persistent Retrieval in Hierarchical Memory Systems for Long-Context Agents: A Controlled Evaluation</a> 获 IEEE SMC 2026 录用（共同一作，作者首位）。</p></li>
+          <li><time datetime="2026-05-08">2026.05</time><p><a href="#paper-recruitment" lang="en">Two-Stage Recruitment Text Labeling via Lexicon-Guided Routing and Retrieval-Augmented Large Language Models</a> 以第一作者发表于 <em lang="en">JoVE</em>。</p></li>
+          <li><time datetime="2025-12-26">2025.12</time><p><a href="#paper-fraclog" lang="en">FracLogGPT: A Multimodal Large Language Model for Fracture Interpretation in Imaging Logging</a> 以第一作者在线发表于 <em lang="en">Electronics</em>，正式引用卷年为 2026。</p></li>
+        </ol>
+      </section>
+
+      <section class="section research" id="publications" aria-labelledby="research-title">
+        <div class="section-heading"><h2 id="research-title" lang="en">Research</h2></div>
+        <p class="section-intro">以第一作者发表 2 篇 SCI-E 论文，另有 1 篇 IEEE SMC 2026 录用论文（共同一作，作者首位）。</p>
+        <article class="paper" id="paper-fraclog" aria-labelledby="fraclog-title">
+          <div class="paper-copy">
+            <h3 id="fraclog-title" lang="en">FracLogGPT: A Multimodal Large Language Model for Fracture Interpretation in Imaging Logging</h3>
+            <p class="authors" lang="en"><strong>Hushuang Shen</strong>, Ang Li, Liyan Zhang, Xiangxiang Liu</p>
+            <p class="citation"><em lang="en">Electronics</em> 15(1), 127, 2026 · 第一作者 · 已发表</p>
+            <p>面向成像测井裂缝解释，基于 Qwen2.5-VL-7B 组织 DAPT、LoRA SFT 与 DPO 三阶段适配，联合评价裂缝计数、空间一致性与文本描述。负责方法设计、软件实现、实验分析与初稿撰写。</p>
+            <p class="result">论文报告：独立测试集上的裂缝计数分类 Count-F1 为 0.70。</p>
+            <div class="resources paper-resources">
+              <a href="https://www.mdpi.com/2079-9292/15/1/127">Paper ↗</a>
+              <a href="https://doi.org/10.3390/electronics15010127">DOI ↗</a>
+              <a href="https://github.com/Darssal/FracLogGPT-Lite">Code · Lite ↗</a>
+              <details class="bibtex"><summary>BibTeX</summary><pre><code>@article{shen2026fracloggpt,
+  title = {FracLogGPT: A Multimodal Large Language Model for Fracture Interpretation in Imaging Logging},
+  author = {Shen, Hushuang and Li, Ang and Zhang, Liyan and Liu, Xiangxiang},
+  journal = {Electronics},
+  year = {2026},
+  volume = {15},
+  number = {1},
+  pages = {127},
+  doi = {10.3390/electronics15010127}
+}</code></pre></details>
+            </div>
+          </div>
+        </article>
+        <article class="paper" id="paper-memory" aria-labelledby="memory-title">
+          <div class="paper-copy">
+            <h3 id="memory-title" lang="en">Persistent Retrieval in Hierarchical Memory Systems for Long-Context Agents: A Controlled Evaluation</h3>
+            <p class="authors" lang="en"><strong>Hushuang Shen*</strong>, Yuan Wang*</p>
+            <p class="contribution">* 两位作者贡献相同。</p>
+            <p class="citation"><em lang="en">IEEE SMC 2026</em> · 共同一作（作者首位）· 已录用</p>
+            <p>固定模型、解码、提示骨架、检索评分与预算策略，在 LoCoMo、LongBench v2 和 LongMemEval 上比较五种记忆配置，检验持久检索在证据充足与稀缺条件下的作用。</p>
+            <p class="result">论文报告：证据稀缺协议下，L0+L2 相对当前轮组织基线的平均绝对得分增益为 0.103。</p>
+            <div class="resources paper-resources">
+              <a href="https://conf.papercept.net/conferences/conferences/SMC26/program/SMC26_ContentListWeb_3.html#tua16_05">Program ↗</a>
+              <a href="https://github.com/Darssal/MemLab">Code · MemLab ↗</a>
+              <details class="bibtex"><summary>BibTeX</summary><pre><code>@unpublished{shen2026persistent,
+  title = {Persistent Retrieval in Hierarchical Memory Systems for Long-Context Agents: A Controlled Evaluation},
+  author = {Shen, Hushuang and Wang, Yuan},
+  year = {2026},
+  note = {Accepted for presentation at IEEE SMC 2026; equal contribution},
+  url = {https://conf.papercept.net/conferences/conferences/SMC26/program/SMC26_ContentListWeb_3.html#tua16_05}
+}</code></pre></details>
+            </div>
+          </div>
+        </article>
+        <article class="paper" id="paper-recruitment" aria-labelledby="recruitment-title">
+          <div class="paper-copy">
+            <h3 id="recruitment-title" lang="en">Two-Stage Recruitment Text Labeling via Lexicon-Guided Routing and Retrieval-Augmented Large Language Models</h3>
+            <p class="authors" lang="en"><strong>Hushuang Shen</strong>, Yuan Wang</p>
+            <p class="citation"><em lang="en">Journal of Visualized Experiments</em> (231), e70153, 2026 · 第一作者 · 已发表</p>
+            <p>以词表引导分流处理常规样本，将双域歧义样本交给检索增强模型，完成 AI／环保／其他三分类标注。</p>
+            <p class="result">论文报告：在 3,000 条人工核验样本上准确率为 98.47%，并用于约 693 万条招聘信息的语料标注。</p>
+            <div class="resources paper-resources">
+              <a href="https://www.jove.com/t/70153/two-stage-recruitment-text-labeling-via-lexicon-guided-routing">Paper ↗</a>
+              <a href="https://doi.org/10.3791/70153">DOI ↗</a>
+              <a href="https://github.com/Darssal/Recruitment-Text-Classification">Baseline ↗</a>
+              <details class="bibtex"><summary>BibTeX</summary><pre><code>@article{shen2026recruitment,
+  title = {Two-Stage Recruitment Text Labeling via Lexicon-Guided Routing and Retrieval-Augmented Large Language Models},
+  author = {Shen, Hushuang and Wang, Yuan},
+  journal = {Journal of Visualized Experiments},
+  year = {2026},
+  number = {231},
+  pages = {e70153},
+  doi = {10.3791/70153}
+}</code></pre></details>
+            </div>
+          </div>
+        </article>
+        <p class="section-note">以上数值为论文报告的结果。公开工程代码的实现与验证范围见 <a href="../verification.html">Verification &amp; Sources ↗</a>。</p>
+      </section>
+
+      <section class="section projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading"><h2 id="projects-title" lang="en">Selected Projects</h2></div>
+        <article class="project" id="fraclog" aria-labelledby="project-fraclog-title">
+          <div class="entry-heading"><h3 id="project-fraclog-title" lang="en">FracLogGPT-Lite</h3><div class="resources"><a href="https://github.com/Darssal/FracLogGPT-Lite">GitHub ↗</a><a href="https://github.com/Darssal/FracLogGPT-Lite/blob/main/docs/QUICKSTART.md">Quickstart ↗</a></div></div>
+          <p>多模态模型适配与推理框架：配置驱动的训练阶段编排、稳定样本键与断点恢复、双分支视觉对比解码及缓存同步。</p>
+          <p class="stack" lang="en">Python · PyTorch · Transformers · PEFT</p>
+          <p class="scope">公开 4B 配置与 CPU／模拟模型测试；论文使用 7B 模型，效果评测分别说明。</p>
+        </article>
+        <article class="project" id="memlab" aria-labelledby="project-memlab-title">
+          <div class="entry-heading"><h3 id="project-memlab-title" lang="en">MemLab</h3><div class="resources"><a href="https://github.com/Darssal/MemLab">GitHub ↗</a><a href="https://github.com/Darssal/MemLab/blob/main/docs/ARCHITECTURE.md">Architecture ↗</a></div></div>
+          <p>Agent 多层记忆与实验控制：组织上下文预算、缓存和持久检索，通过异步批处理、会话归属与运行有效性检查控制记忆写入。</p>
+          <p class="stack" lang="en">Python · asyncio · Redis · PostgreSQL</p>
+          <p class="scope">离线测试覆盖策略与控制流程；预算采用字符启发式估算，外部存储集成另行验证。</p>
+        </article>
+        <article class="project" id="classification" aria-labelledby="project-classification-title">
+          <div class="entry-heading"><h3 id="project-classification-title" lang="en">Recruitment-Text-Classification</h3><div class="resources"><a href="https://github.com/Darssal/Recruitment-Text-Classification">GitHub ↗</a><a href="https://github.com/Darssal/Recruitment-Text-Classification#快速运行">Quickstart ↗</a></div></div>
+          <p>招聘文本三分类基线：字符 TF-IDF 与随机森林，包含训练验证隔离、类别概率对齐、HTTP 有界重试与结果顺序保持。</p>
+          <p class="stack" lang="en">Python · scikit-learn · HTTP</p>
+          <p class="scope">使用新编合成示例跑通流程；当前公开基线没有实现论文的完整 RAG 系统。</p>
+        </article>
+        <p class="section-note"><a href="https://github.com/Darssal/Research-Code-Collection/blob/main/docs/ENGINEERING_NOTES.md" lang="en">Engineering Notes ↗</a> · 公开代码的工程整理与实现说明。</p>
+      </section>
+
+      <section class="section experience" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading"><h2 id="experience-title" lang="en">Research Experience</h2></div>
+        <article class="experience-entry">
+          <div class="entry-heading"><h3>基于时序Transformer的跨井域泛化测井预测系统</h3><p class="entry-date">2026.06—2027.06<span>计划周期</span></p></div>
+          <p class="entry-status">国家级大学生创新训练项目 · 新立项／在研</p>
+        <p>研究方向：时序 Transformer、跨井域泛化与测井预测。</p>
+        </article>
+        <article class="experience-entry">
+          <div class="entry-heading"><h3>地层信息处理与多模态模型研究</h3><p class="entry-date">2026.09 结题</p></div>
+          <p class="entry-status">国家级大学生创新训练项目 · 项目成员</p>
+          <p>项目全称：基于联合时空注意力机制和多模态大模型的地层信息处理系统——油田数据预测和隐私安全研究。</p>
+          <p>参与 Web 平台前后端开发、地质数据读取与可视化，并围绕裂缝识别开展多模态模型任务验证。</p>
+        </article>
+      </section>
+
+      <section class="section honors" id="honors" aria-labelledby="honors-title">
+        <div class="section-heading"><h2 id="honors-title" lang="en">Honors</h2></div>
+        <ul class="award-list">
+          <li><time datetime="2025">2025</time><span>第十八届先进机器人及仿真技术大赛<span class="award-context">个人赛 · 人工智能＋商科类</span></span><strong>国赛一等奖</strong></li>
+          <li><time datetime="2025">2025</time><span>睿抗机器人开发者大赛（RAICOM）<span class="award-context">编程技能竞赛项目</span></span><strong>全国总决赛三等奖</strong></li>
+          <li><time datetime="2025">2025</time><span>全国高校计算机能力挑战赛<span class="award-context">程序设计 · C++ 本科组</span></span><strong>全国决赛三等奖</strong></li>
+          <li><time datetime="2026">2026</time><span>美国大学生数学建模竞赛（ICM）<span class="award-context">三人团队成员</span></span><strong lang="en">Honorable Mention</strong></li>
+          <li><time datetime="2025">2025</time><span>第十六届蓝桥杯<span class="award-context">C/C++ 大学 A 组 · 新疆赛区</span></span><strong>赛区一等奖</strong></li>
+        </ul>
+        <details class="more-honors"><summary>More Honors <span>（4 项）</span></summary>
+          <ul class="award-list">
+            <li><time datetime="2024">2024</time><span>第十四届亚太地区大学生数学建模竞赛（APMCM）<span class="award-context">2024 届 · 团队成员</span></span><strong>本科组二等奖</strong></li>
+            <li><time datetime="2024">2024</time><span>全国大学生数学建模竞赛<span class="award-context">新疆赛区 · 本科组 · 团队成员</span></span><strong>赛区一等奖</strong></li>
+            <li><time datetime="2023">2023</time><span>第十五届全国大学生数学竞赛<span class="award-context">非数学 A 类 · 初赛</span></span><strong>初赛一等奖</strong></li>
+            <li><time datetime="2025">2025</time><span>第十五届 MathorCup 数学应用挑战赛<span class="award-context">本科生组 · 团队成员</span></span><strong>赛区三等奖</strong></li>
+          </ul>
+        </details>
+        <p class="pat">PAT 程序设计乙级 100/100，本场排名 1/107（2025.09）。</p>
+      </section>
+
+      <section class="section education" id="education" aria-labelledby="education-title">
+        <div class="section-heading"><h2 id="education-title" lang="en">Education</h2></div>
+        <article class="education-entry">
+          <div class="entry-heading"><h3>中国石油大学（北京）克拉玛依校区</h3><p class="entry-date">2023.09—2027（预计）</p></div>
+          <p>数据科学与大数据技术 · 本科在读</p>
+          <p class="scope">专业成绩排名 3/94（2026.09）</p>
+        </article>
+        <article class="education-entry">
+          <div class="entry-heading"><h3>中国科学院大学 · 计算技术研究所</h3><p class="entry-date">2027 级</p></div>
+          <p>保研去向：计算机科学与技术（尚未入学）</p>
+        </article>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p class="updated">更新于 <time datetime="2026-10-19">2026-10-19</time></p>
+      <div class="resources"><a href="https://github.com/Darssal">GitHub</a><a href="../cv.html">CV</a><a href="../verification.html">Verification &amp; Sources</a><a href="../">学术版</a></div>
+      <p class="design-credit" lang="en">Layout reference: <a href="https://shuhongchen.github.io/">Shuhong Chen</a></p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -20,7 +20,7 @@ PAPER_HOSTS = {
     "www.mdpi.com", "www.jove.com", "doi.org", "pubmed.ncbi.nlm.nih.gov",
     "conf.papercept.net",
 }
-ALLOWED_HOSTS = {"github.com", "docs.github.com", "darssal.github.io", "www.ieeesmc2026.org"} | PAPER_HOSTS
+ALLOWED_HOSTS = {"github.com", "docs.github.com", "darssal.github.io", "www.ieeesmc2026.org", "shuhongchen.github.io"} | PAPER_HOSTS
 ALLOWED_SUFFIXES = {
     ".html", ".css", ".js", ".svg", ".png", ".jpg", ".jpeg", ".webp",
     ".ico", ".txt", ".xml", ".json", ".webmanifest",
