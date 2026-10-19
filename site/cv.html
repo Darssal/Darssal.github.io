@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="沈瑚双 Hushuang Shen 的公开简历：教育背景、多模态与 Agent 研究论文、代码项目及科技竞赛荣誉。">
+  <meta name="theme-color" content="#203047">
+  <link rel="canonical" href="https://darssal.github.io/cv.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <title>CV · 沈瑚双 Hushuang Shen</title>
+</head>
+<body class="cv-page">
+  <a class="skip-link" href="#main">跳转到主要内容</a>
+  <header class="header">
+    <nav class="shell nav" aria-label="主要导航">
+      <a class="wordmark" href="/">Hushuang Shen</a>
+      <div class="nav-links">
+        <a href="/#publications">Research</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#honors">Honors</a>
+        <a href="/cv.html" aria-current="page">CV</a>
+      </div>
+    </nav>
+  </header>
+  <main class="document shell" id="main" tabindex="-1">
+    <h1>沈瑚双 <span lang="en">Hushuang Shen</span></h1>
+    <p>多模态大模型 · Agent 记忆 · 检索增强生成</p>
+    <p><a href="https://github.com/Darssal">GitHub / Darssal</a> · <a href="https://darssal.github.io/">个人主页</a>。可使用浏览器打印功能保存为 PDF。</p>
+
+    <section aria-labelledby="education-title">
+      <h2 id="education-title" lang="en">Education</h2>
+      <article>
+        <h3>中国科学院大学 · 计算技术研究所</h3>
+        <p>计算机科学与技术 · 2027 级保研去向（尚未入学）</p>
+      </article>
+      <article>
+        <h3>中国石油大学（北京）克拉玛依校区</h3>
+        <p>数据科学与大数据技术 · 本科在读 · 2023.09—2027（预计）</p>
+        <p>专业成绩排名 <strong>3/94</strong>（2026.09）。</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="publications-title">
+      <h2 id="publications-title" lang="en">Research</h2>
+      <p>第一作者发表 2 篇 SCI-E 论文；另有 1 篇 IEEE SMC 2026 录用论文，为共同一作、作者首位。</p>
+      <article>
+        <h3 lang="en">FracLogGPT: A Multimodal Large Language Model for Fracture Interpretation in Imaging Logging</h3>
+        <p lang="en"><strong>Hushuang Shen</strong>, Ang Li, Liyan Zhang, Xiangxiang Liu. <em>Electronics</em>, 15(1), 127, 2026.</p>
+        <p><strong>第一作者 · 已发表。</strong>面向成像测井裂缝解释，基于 Qwen2.5-VL-7B 组织 DAPT、LoRA SFT 与 DPO 三阶段适配；负责方法设计、软件实现、实验分析与初稿撰写。</p>
+        <p><a href="https://doi.org/10.3390/electronics15010127">DOI：10.3390/electronics15010127</a> · <a href="https://github.com/Darssal/FracLogGPT-Lite">相关工程代码</a></p>
+      </article>
+      <article>
+        <h3 lang="en">Two-Stage Recruitment Text Labeling via Lexicon-Guided Routing and Retrieval-Augmented Large Language Models</h3>
+        <p lang="en"><strong>Hushuang Shen</strong>, Yuan Wang. <em>Journal of Visualized Experiments</em>, (231), e70153, 2026.</p>
+        <p><strong>第一作者 · 已发表。</strong>以词表引导分流与检索增强推理处理招聘文本，论文在 3,000 条人工核验的 AI／环保／其他三分类基准上报告 98.47% 准确率。</p>
+        <p><a href="https://doi.org/10.3791/70153">DOI：10.3791/70153</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42184252/">PubMed</a></p>
+      </article>
+      <article>
+        <h3 lang="en">Persistent Retrieval in Hierarchical Memory Systems for Long-Context Agents: A Controlled Evaluation</h3>
+        <p lang="en"><strong>Hushuang Shen*</strong>, Yuan Wang*. <em>IEEE International Conference on Systems, Man, and Cybernetics (SMC)</em>, 2026.</p>
+        <p><strong>共同一作（作者首位）· 已录用。</strong>* 两位作者贡献相同。在冻结模型、解码与预算策略的条件下，比较五种记忆配置在 LoCoMo、LongBench v2 与 LongMemEval 上的表现，分析持久检索的作用。</p>
+        <p><a href="https://conf.papercept.net/conferences/conferences/SMC26/program/SMC26_ContentListWeb_3.html#tua16_05">官方会议议程</a> · <a href="https://github.com/Darssal/MemLab">相关工程代码</a>。当前按录用状态列示。</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="projects-title">
+      <h2 id="projects-title" lang="en">Selected Projects</h2>
+      <article>
+        <h3>FracLogGPT-Lite · 多模态模型适配与推理</h3>
+        <p>提供训练阶段编排、稳定样本键与断点恢复；实现双分支视觉对比解码及缓存同步，组织模型适配与评测流程。</p>
+        <p><a href="https://github.com/Darssal/FracLogGPT-Lite">源码</a> · <a href="https://github.com/Darssal/FracLogGPT-Lite/blob/main/docs/QUICKSTART.md">运行说明</a></p>
+      </article>
+      <article>
+        <h3>MemLab · Agent 多层记忆与实验控制</h3>
+        <p>组织上下文预算、缓存与持久检索；通过异步批处理、会话归属和运行有效性检查，控制记忆写入与受控评测。</p>
+        <p><a href="https://github.com/Darssal/MemLab">源码</a> · <a href="https://github.com/Darssal/MemLab/blob/main/docs/ARCHITECTURE.md">架构说明</a></p>
+      </article>
+      <article>
+        <h3>Recruitment-Text-Classification · 招聘文本三分类</h3>
+        <p>基于字符 TF-IDF 与随机森林构建分类基线，处理训练验证隔离、类别概率对齐、HTTP 有界重试及结果顺序保持。</p>
+        <p><a href="https://github.com/Darssal/Recruitment-Text-Classification">源码与运行示例</a></p>
+      </article>
+      <p>公开代码为脱敏工程整理；论文实验与代码验证分别说明，具体范围见<a href="/verification.html">验证范围与来源</a>。</p>
+    </section>
+
+    <section aria-labelledby="experience-title">
+      <h2 id="experience-title" lang="en">Research Experience</h2>
+      <article>
+        <h3>基于时序Transformer的跨井域泛化测井预测系统</h3>
+        <p>国家级大学生创新训练项目 · 新立项／在研 · 2026.06—2027.06（计划周期）</p>
+        <p>研究方向为时序 Transformer、跨井域泛化与测井预测。</p>
+      </article>
+      <article>
+        <h3>国家级大学生创新训练项目 · 项目成员</h3>
+        <p>基于联合时空注意力机制和多模态大模型的地层信息处理系统——油田数据预测和隐私安全研究，2026.09 结题。</p>
+        <p>参与 Web 平台前后端开发、地质数据读取与可视化，并围绕裂缝识别开展多模态模型任务验证。</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="honors-title">
+      <h2 id="honors-title" lang="en">Honors</h2>
+      <ul>
+        <li><strong>第十八届先进机器人及仿真技术大赛 · 国赛一等奖</strong>，个人赛／人工智能＋商科类，2025.11。</li>
+        <li><strong>睿抗机器人开发者大赛（RAICOM）· 全国总决赛三等奖</strong>，编程技能，2025.08。</li>
+        <li><strong>全国高校计算机能力挑战赛 · 全国决赛三等奖</strong>，C++ 本科组，2025.12。</li>
+        <li><strong>美国大学生数学建模竞赛（ICM）· Honorable Mention</strong>，团队，2026。</li>
+        <li><strong>第十六届蓝桥杯 · 赛区一等奖</strong>，C/C++ 程序设计大学 A 组，新疆赛区，2025.05。</li>
+        <li><strong>第十四届亚太地区大学生数学建模竞赛（APMCM）· 本科组二等奖</strong>，团队，2024 届。</li>
+        <li><strong>全国大学生数学建模竞赛 · 赛区本科组一等奖</strong>，团队，新疆赛区，2024。</li>
+        <li><strong>第十五届全国大学生数学竞赛 · 非数学 A 类初赛一等奖</strong>，2023.12。</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="shell footer">
+    <p>更新于 <time datetime="2026-10-19">2026-10-19</time> · 论文状态、公开代码与研究记录以对应链接为准。</p>
+    <a class="text-link" href="/">返回个人主页</a>
+  </footer>
+</body>
+</html>
