@@ -3,52 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="代码行为验证、公开范围与上游来源。测试记录用于说明验证边界，不代表模型效果或生产部署结果。">
-  <meta name="theme-color" content="#122126">
+  <meta name="description" content="沈瑚双 Hushuang Shen 的论文状态、作者贡献、教育与获奖材料，以及公开代码的验证范围和上游来源。">
+  <meta name="theme-color" content="#203047">
   <link rel="canonical" href="https://darssal.github.io/verification.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
-  <title>验证范围与来源 · Darssal</title>
+  <title>研究、履历与代码验证范围 · Hushuang Shen</title>
 </head>
 <body>
   <a class="skip-link" href="#main">跳转到主要内容</a>
-  <header class="header"><nav class="shell nav" aria-label="主要导航"><a class="wordmark" href="/" aria-label="Darssal 首页">Darssal</a><div class="nav-links"><a href="/#projects">精选项目</a><a href="/#notes">工程笔记</a></div><a class="nav-github" href="https://github.com/Darssal">GitHub <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></a></nav></header>
+  <header class="header">
+    <nav class="shell nav" aria-label="主要导航">
+      <a class="wordmark" href="/" aria-label="Hushuang Shen 首页">Hushuang Shen</a>
+      <div class="nav-links">
+        <a href="/#publications">Research</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#honors">Honors</a>
+        <a href="/cv.html">CV</a>
+      </div>
+      <a class="text-link" href="https://github.com/Darssal">GitHub ↗</a>
+    </nav>
+  </header>
   <main class="document shell" id="main" tabindex="-1">
-    <h1>验证范围与来源</h1>
-    <p class="lead">实现可以沿代码阅读，结论需要对应证据。这里记录目前公开材料支持的范围。</p>
+    <h1 lang="en">Verification &amp; Sources</h1>
+    <p class="lead">这里说明论文、履历与公开代码分别由哪些材料支持，并记录研究结果与工程验证的适用范围。材料核对更新于 <time datetime="2026-10-19">2026-10-19</time>。</p>
+
+    <section aria-labelledby="publications-title">
+      <h2 id="publications-title" lang="en">Publications &amp; Contributions</h2>
+      <p>沈瑚双在英文论文中署名为 Hushuang Shen。两篇期刊论文已发表，SCI-E 收录由留存的签字检索证明核验；另有一篇 IEEE SMC 2026 录用论文。作者顺序与状态分别对照出版商页面、会议议程和留存原件。</p>
+
+      <h3>FracLogGPT: A Multimodal Large Language Model for Fracture Interpretation in Imaging Logging</h3>
+      <p><strong>Hushuang Shen</strong>, Ang Li, Liyan Zhang, Xiangxiang Liu. <em>Electronics</em>, 15(1), 127, 2026。第一作者，已发表；通讯作者为 Ang Li。正式引用采用 2026 卷年，在线发表日期为 <time datetime="2025-12-26">2025-12-26</time>。</p>
+      <p>论文的作者贡献声明列明 Hushuang Shen 负责方法设计、软件实现、实验分析、研究执行与初稿撰写；研究构思、验证、数据整理和可视化包含共同作者参与。</p>
+      <p>论文报告基于 Qwen2.5-VL-7B 的 DAPT、LoRA SFT 与 DPO 三阶段实验，独立测试集的裂缝计数分类 Count-F1 为 0.70。该数值属于论文中的实验结果，不能视为 FracLogGPT-Lite 公开精简实现或 4B 配置已复现的效果。</p>
+      <p><a href="https://doi.org/10.3390/electronics15010127">DOI：10.3390/electronics15010127</a> · <a href="https://www.mdpi.com/2079-9292/15/1/127">出版商页面</a> · <a href="https://www.mdpi.com/2079-9292/15/1/127/notes">版本与发表日期</a></p>
+
+      <h3>Two-Stage Recruitment Text Labeling via Lexicon-Guided Routing and Retrieval-Augmented Large Language Models</h3>
+      <p><strong>Hushuang Shen</strong>, Yuan Wang. <em>Journal of Visualized Experiments</em>, (231), e70153, 2026。第一作者，已发表；通讯作者为 Yuan Wang。发表日期为 <time datetime="2026-05-08">2026-05-08</time>。</p>
+      <p>论文研究包含词表引导分流、向量检索与 RAG 推理。在 3,000 条人工核验的 AI／环保／其他三分类基准上，论文报告准确率为 98.47%，并用于约 693 万条招聘信息的语料标注。该结果受三标签任务与论文评测协议约束，不直接代表更细岗位体系或其他语料的分类效果。</p>
+      <p>公开代码展示 TF-IDF／随机森林、可选 BERT 路径与 HTTP 协议适配等精简基线，没有发布完整 RAG 知识库、原始招聘语料或整套论文实验。论文中的 RAG 方法与公开基线的实现范围应分别阅读。</p>
+      <p><a href="https://doi.org/10.3791/70153">DOI：10.3791/70153</a> · <a href="https://www.jove.com/t/70153/two-stage-recruitment-text-labeling-via-lexicon-guided-routing">出版商页面</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42184252/">PubMed 记录</a></p>
+
+      <h3>Persistent Retrieval in Hierarchical Memory Systems for Long-Context Agents: A Controlled Evaluation</h3>
+      <p><strong>Hushuang Shen</strong>, Yuan Wang. <em>IEEE International Conference on Systems, Man, and Cybernetics (SMC)</em>, 2026。共同一作，Hushuang Shen 作者首位；论文首页明确两位作者贡献相同，通讯作者为 Yuan Wang。</p>
+      <p>留存的 <time datetime="2026-06-21">2026-06-21</time> 录用函确认 accepted for presentation。官方议程列有同题、同作者论文，安排为 <time datetime="2026-10-06">2026-10-06</time> 14:30–14:45，TuA16.5。目前保留“已录用”状态，尚无已核实的正式出版 DOI；议程安排本身也不用于证明作者实际出席。</p>
+      <p>研究在固定模型、解码、提示骨架、检索评分与预算策略下比较五种记忆配置。论文与会议议程摘要报告：在证据稀缺协议下，L0+L2 相对当前轮组织基线在 LoCoMo、LongBench v2、LongMemEval 的绝对分值增益分别为 0.0628、0.1233、0.1220，平均为 0.103；叠加 L1／L3 未继续改善该协议下的最佳结果。</p>
+      <p>MemLab 公开精简代码用于阅读记忆策略、上下文预算与会话控制。离线测试说明代码行为，不构成论文完整评测或外部服务集成的复现。</p>
+      <p><a href="https://conf.papercept.net/conferences/conferences/SMC26/program/SMC26_ContentListWeb_3.html#tua16_05">官方会议议程</a> · <a href="https://conf.papercept.net/conferences/conferences/SMC26/program/SMC26_AuthorIndexWeb.html">官方作者索引</a> · <a href="https://www.ieeesmc2026.org/">IEEE SMC 2026</a></p>
+    </section>
+
+    <section aria-labelledby="credentials-title">
+      <h2 id="credentials-title" lang="en">Education &amp; Honors</h2>
+      <p>本科教育、专业成绩排名、已结题创新项目与竞赛获奖信息已对照本人留存材料核对。专业成绩排名为 3/94，证明日期为 2026 年 9 月；奖项按证书所列年份、级别和本人身份展示。</p>
+      <p>竞赛与项目按证书所列年份、级别、奖项和本人身份展示，团队奖项不改写为个人单独获奖。同一赛事的不同阶段按实际获奖记录区分，结题项目不改写为竞赛奖项。</p>
+      <p>保研去向依据本人提供并确认的信息展示，为 2027 级未来去向，尚未入学；新立项项目依据本人提供的简历列为在研，并注明计划周期。公开页整理教育、研究与获奖摘要，证明原件及其签名、编号等信息保留本机。</p>
+      <p><a href="/cv.html">查看简历</a> · <a href="/#honors">查看精选荣誉</a></p>
+    </section>
+
     <section aria-labelledby="checks-title">
-      <h2 id="checks-title">代码验证</h2>
-      <p>以下记录日期为 <time datetime="2026-10-18">2026-10-18</time>，覆盖相应代码行为。测试数量不代表模型精度、实验规模或线上可靠性。</p>
+      <h2 id="checks-title" lang="en">Code Validation</h2>
+      <p>FracLogGPT-Lite 的验证记录日期为 2026-10-18；MemLab 与 Recruitment-Text-Classification 的独立仓库验证更新于 <time datetime="2026-10-19">2026-10-19</time>。测试数量说明相应代码行为的检查范围。</p>
       <div class="table-scroll" role="region" aria-label="项目验证记录" tabindex="0">
         <table><thead><tr><th scope="col">项目</th><th scope="col">验证记录</th><th scope="col">核查入口</th></tr></thead><tbody>
           <tr><th scope="row">FracLogGPT-Lite</th><td>59 项公共单元测试；CPU 与模拟模型路径</td><td><a href="https://github.com/Darssal/FracLogGPT-Lite/blob/main/docs/QUICKSTART.md">无 GPU 验证说明</a></td></tr>
-          <tr><th scope="row">MemLab</th><td>53 项离线测试；记忆策略与实验控制</td><td><a href="https://github.com/Darssal/Research-Code-Collection/blob/main/projects/memlab/docs/TESTING.md">测试说明</a></td></tr>
-          <tr><th scope="row">招聘文本三分类</th><td>16 项回归测试；24 条新编合成示例用于跑通流程</td><td><a href="https://github.com/Darssal/Research-Code-Collection/tree/main/projects/job-text-classification">运行与回归测试</a></td></tr>
+          <tr><th scope="row">MemLab</th><td>53 项离线测试；记忆策略与实验控制</td><td><a href="https://github.com/Darssal/MemLab/blob/main/docs/TESTING.md">测试说明</a></td></tr>
+          <tr><th scope="row">招聘文本三分类</th><td>16 项回归测试；24 条新编合成示例用于跑通流程</td><td><a href="https://github.com/Darssal/Recruitment-Text-Classification">运行与回归测试</a></td></tr>
         </tbody></table>
       </div>
-      <p><a href="https://github.com/Darssal/Research-Code-Collection/actions/workflows/checks.yml">查看代码集合的持续集成记录</a>。日期与测试范围以对应提交的记录为准。</p>
+      <p>各项目独立维护持续集成：<a href="https://github.com/Darssal/FracLogGPT-Lite/actions">FracLogGPT-Lite</a> · <a href="https://github.com/Darssal/MemLab/actions">MemLab</a> · <a href="https://github.com/Darssal/Recruitment-Text-Classification/actions">Recruitment-Text-Classification</a>。日期与测试范围以对应提交的记录为准。</p>
     </section>
+
     <section aria-labelledby="bounds-title">
-      <h2 id="bounds-title">实现边界</h2>
+      <h2 id="bounds-title" lang="en">Implementation Scope</h2>
       <h3>FracLogGPT-Lite</h3>
       <p>提供阶段编排、预测恢复与视觉对比解码代码；公开单元测试没有执行完整模型训练或实测模型推理。仓库内论文基线字段不作为已复现的个人实验结果，4B 与 7B 模型也没有据此进行同测试集效果比较。</p>
       <h3>MemLab</h3>
       <p>上下文预算使用字符长度启发式估算，不保证 tokenizer 的精确 token 数。离线哈希嵌入用于流程验证，不是训练后的语义向量。Redis、PostgreSQL、Qdrant 及外部 API 的端到端集成没有通过这批离线测试验证。</p>
       <h3>招聘文本三分类</h3>
-      <p>TF-IDF / 随机森林用于基线流程；BERT 是可选路径，实际训练、模型下载与外部 HTTP 服务没有在此次验证中运行。合成示例不用于说明真实业务规模或泛化效果；HTTP 协议适配没有实现 RAG。</p>
+      <p>TF-IDF／随机森林用于基线流程；BERT 是可选路径，实际训练、模型下载与外部 HTTP 服务没有在此次验证中运行。合成示例不用于说明真实业务规模或泛化效果；HTTP 协议适配没有实现 RAG。</p>
       <p>更具体的机制与取舍见 <a href="https://github.com/Darssal/Research-Code-Collection/blob/main/docs/ENGINEERING_NOTES.md">工程实现与设计取舍</a>。</p>
     </section>
+
     <section aria-labelledby="sources-title">
-      <h2 id="sources-title">来源与依赖</h2>
-      <p>FracLogGPT-Lite 的训练调用基于 <a href="https://github.com/modelscope/ms-swift">ms-swift</a>，模型加载使用 <a href="https://github.com/huggingface/transformers">Transformers</a> / <a href="https://github.com/huggingface/peft">PEFT</a>。这些上游能力不作为独立实现宣称。</p>
-      <p>MemLab 保留 <a href="https://github.com/bytedance/deer-flow">DeerFlow</a> 适配来源。具体依赖与来源见 <a href="https://github.com/Darssal/Research-Code-Collection/blob/main/THIRD_PARTY.md">第三方说明</a>。个人、合作与上游代码的贡献划分以可核实材料为准。</p>
+      <h2 id="sources-title" lang="en">Sources &amp; Dependencies</h2>
+      <p>FracLogGPT-Lite 的训练调用基于 <a href="https://github.com/modelscope/ms-swift">ms-swift</a>，模型加载使用 <a href="https://github.com/huggingface/transformers">Transformers</a>／<a href="https://github.com/huggingface/peft">PEFT</a>。这些上游能力不作为独立实现宣称。</p>
+      <p>MemLab 保留 <a href="https://github.com/bytedance/deer-flow">DeerFlow</a> 适配来源，具体归属见 <a href="https://github.com/Darssal/MemLab/blob/main/THIRD_PARTY.md">MemLab 第三方说明</a>。论文作者贡献和公开仓库的实现归属分别按可核实材料说明。</p>
     </section>
+
     <section aria-labelledby="public-title">
-      <h2 id="public-title">公开内容</h2>
-      <p>本站发布静态 HTML、CSS 与 SVG。代码仓库整理源码、配置、测试与合成示例；原始数据、私密配置、模型权重和实验输出不随本站发布。</p>
+      <h2 id="public-title" lang="en">Public Content</h2>
+      <p>本站发布静态页面与精选职业信息，论文优先链接出版商或会议的公开页面。代码仓库整理源码、配置、测试与合成示例；原始数据、私密配置、模型权重、原始实验输出和证明原件不随本站发布。</p>
       <p><a href="https://github.com/Darssal/Research-Code-Collection/blob/main/docs/PUBLICATION_SCOPE.md">查看代码集合公开范围</a> · <a href="https://github.com/Darssal/Darssal.github.io">查看网站源码</a> · <a href="/">返回首页</a></p>
     </section>
   </main>
-  <footer class="shell footer"><div><a class="wordmark" href="/">Darssal</a><p>网站更新于 <time datetime="2026-10-19">2026-10-19</time></p></div><a class="text-link" href="https://github.com/Darssal">GitHub <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></a></footer>
+  <footer class="shell footer">
+    <div><a class="wordmark" href="/">Hushuang Shen</a><p>更新于 <time datetime="2026-10-19">2026-10-19</time></p></div>
+    <a class="text-link" href="https://github.com/Darssal">GitHub ↗</a>
+  </footer>
 </body>
 </html>

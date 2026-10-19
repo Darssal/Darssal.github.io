@@ -8,6 +8,7 @@ This intentionally checks site/ only; legacy sources are not deployment inputs.
 from __future__ import annotations
 
 import argparse
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -15,7 +16,11 @@ from urllib.parse import unquote, urlsplit
 import xml.etree.ElementTree as ET
 
 
-ALLOWED_HOSTS = {"github.com", "docs.github.com", "darssal.github.io"}
+PAPER_HOSTS = {
+    "www.mdpi.com", "www.jove.com", "doi.org", "pubmed.ncbi.nlm.nih.gov",
+    "conf.papercept.net",
+}
+ALLOWED_HOSTS = {"github.com", "docs.github.com", "darssal.github.io", "www.ieeesmc2026.org"} | PAPER_HOSTS
 ALLOWED_SUFFIXES = {
     ".html", ".css", ".js", ".svg", ".png", ".jpg", ".jpeg", ".webp",
     ".ico", ".txt", ".xml", ".json", ".webmanifest",
@@ -32,12 +37,45 @@ MAX_ASSET_BYTES = 2 * 1024 * 1024
 MAX_TOTAL_BYTES = 8 * 1024 * 1024
 CSS_URL = re.compile(r"url\(\s*(['\"]?)(.*?)\1\s*\)", re.I)
 CSS_IMPORT = re.compile(r"@import\s+['\"]([^'\"]+)['\"]", re.I)
+HTTPS_URL = re.compile(r"https://[^\s<>\"']+", re.I)
+PRIVATE_NAME = re.compile(r"(?:^|[-_.])private", re.I)
 SECRET_RULES = {
     "private-key": re.compile(r"-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----"),
     "provider-key": re.compile(r"\b(?:sk-[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{30,}|AKIA[A-Z0-9]{16})\b"),
     "credential-assignment": re.compile(r"(?i)\b(?:api[_-]?key|access[_-]?token|password|client[_-]?secret)\s*[:=]\s*['\"]?[A-Za-z0-9_+/=-]{16,}"),
     "private-machine-path": re.compile(r"(?i)(?:[A-Z]:[\\/](?:Users|program(?:_II)?)[\\/]|/(?:Users|home)/[A-Za-z0-9._-]+/)"),
 }
+PERSONAL_DATA_RULES = {
+    # Require a plausible encoded birth date, rather than any 18-digit sequence.
+    "personal-id-card": re.compile(r"(?<!\d)[1-9]\d{5}(?:18|19|20)\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])\d{3}[\dXx](?!\d)"),
+    "personal-phone": re.compile(r"(?<!\d)1[3-9]\d{9}(?!\d)"),
+    "personal-email": re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I),
+}
+
+
+def personal_data_findings(body: str):
+    """Yield rule names and line numbers without returning contact values.
+
+    HTML entities are decoded so encoded text is checked as rendered. A numeric
+    article identifier within an exact official paper URL path is not a phone number;
+    the same digits in prose still fail. Identity-card and email rules apply to
+    URLs as well, and URL scheme/host restrictions are checked independently.
+    """
+    text = unescape(body)
+    paper_urls = []
+    for match in HTTPS_URL.finditer(text):
+        try:
+            url = urlsplit(match.group())
+            if url.hostname in PAPER_HOSTS:
+                path_start = match.start() + len(url.scheme) + 3 + len(url.netloc)
+                paper_urls.append((path_start, path_start + len(url.path)))
+        except ValueError:
+            continue
+    for rule, pattern in PERSONAL_DATA_RULES.items():
+        for match in pattern.finditer(text):
+            if rule == "personal-phone" and any(start <= match.start() and match.end() <= end for start, end in paper_urls):
+                continue
+            yield rule, text.count("\n", 0, match.start()) + 1
 
 
 class Page(HTMLParser):
@@ -121,7 +159,7 @@ class Checker:
             if path.is_symlink() or not path.resolve().is_relative_to(self.site.resolve()):
                 self.fail(path, "linked-or-outside-artifact")
                 continue
-            if any(part.lower() in FORBIDDEN_PARTS or part.lower().startswith(".env") for part in relative.parts):
+            if any(part.lower() in FORBIDDEN_PARTS or part.lower().startswith(".env") or PRIVATE_NAME.search(part) for part in relative.parts):
                 self.fail(path, "sensitive-path")
             if any(ord(char) < 32 for char in relative.as_posix()):
                 self.fail(path, "control-character-in-path")
@@ -151,6 +189,8 @@ class Checker:
             for rule, pattern in SECRET_RULES.items():
                 for match in pattern.finditer(body):
                     self.fail(path, rule, body.count("\n", 0, match.start()) + 1)
+            for rule, line in personal_data_findings(body):
+                self.fail(path, rule, line)
             self.parse(path, body, suffix)
         for name in sorted(REQUIRED_FILES):
             if self.site / name not in self.files:
